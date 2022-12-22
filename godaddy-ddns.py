@@ -135,6 +135,6 @@ else:
         print('Create a new record...')
     else:
         do_func = update_domain_record
-        print('Update the existed record found...')
+        print('Update the existing record...')
     do_func(gdd_api_key, domain, name, ip, ttl)
     print("DONE")

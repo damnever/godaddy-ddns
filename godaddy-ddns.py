@@ -107,7 +107,7 @@ if len(domain_parts) < 2:
     msg = '"{}" is not a fully-qualified domain name.'.format(args.domain)
     raise Exception(msg)
 elif len(domain_parts) < 3:
-    domain = args.hostname
+    domain = args.domain
     name = "@"
 else:
     domain = ".".join(domain_parts[-2:])
@@ -121,7 +121,7 @@ if not args.ip:
         except Exception as e:
             print('Get IP from {} failed: {}'.format(url, ip))
     if not ip:
-        raise ValueError("No IP address found")
+        raise Exception("No IP address found")
 gdd_api_key = args.api_key
 ttl = args.ttl
 
